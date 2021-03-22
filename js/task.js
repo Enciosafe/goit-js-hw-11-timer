@@ -14,6 +14,9 @@ const СountdownTimer = function ({ selector, targetDate }) {
 
     setInterval(() => {
       const currentTime = Date.now();
+        if (currentTime > startTime) {
+          alert('need to put date in future!!');
+      }
       const deltaTime = startTime - currentTime;
       const { days, hours, mins, secs } = getTimer(deltaTime)
       refs.lookDays.innerText = days;
